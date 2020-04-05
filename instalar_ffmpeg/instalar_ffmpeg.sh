@@ -123,4 +123,7 @@ PATH="$HOME/bin:$PATH" make && \
 make install && \
 hash -r
 
-source ~/.profile
+sudo cp ~/bin/* /usr/bin
+rm -Rf ~/bin/
+rm -Rf ~/ffmpeg_build/
+rm -Rf ~/ffmpeg_sources/
