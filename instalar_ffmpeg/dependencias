@@ -1,4 +1,6 @@
-sudo apt-get update -qq && sudo apt-get -y install \
+#!/bin/bash
+
+apt-get update -qq && apt-get -y install \
   autoconf \
   automake \
   build-essential \

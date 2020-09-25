@@ -2,7 +2,7 @@
 
 echo "Borrando instalacion anterior..."
 rm -rf ~/ffmpeg_build ~/ffmpeg_sources ~/bin/{ffmpeg,ffprobe,ffplay,ffserver,vsyasm,x264,x265,yasm,ytasm}
-sudo apt-get autoremove autoconf automake build-essential cmake libass-dev libfreetype6-dev \
+apt-get autoremove autoconf automake build-essential cmake libass-dev libfreetype6-dev \
   libmp3lame-dev libopus-dev libsdl1.2-dev libtheora-dev libtool libva-dev libvdpau-dev \
   libvorbis-dev libvpx-dev libx264-dev libxcb1-dev libxcb-shm0-dev ibxcb-xfixes0-dev mercurial texinfo zlib1g-dev
 sed -i '/ffmpeg_build/c\' ~/.manpath
@@ -10,7 +10,7 @@ hash -r
 
 
 echo "Instalando dependencias..."
-sudo apt-get update
+apt-get update
 ./dependencias
 
 
@@ -48,7 +48,7 @@ make install
 
 #sudo apt-get install -y libx265-dev libnuma-dev
 echo "Compilando libnuma-dev..."
-sudo apt-get install mercurial libnuma-dev && \
+apt-get install mercurial libnuma-dev && \
 cd ~/ffmpeg_sources && \
 if cd x265 2> /dev/null; then hg pull && hg update && cd ..; else hg clone https://bitbucket.org/multicoreware/x265; fi && \
 cd x265/build/linux && \
@@ -123,7 +123,7 @@ PATH="$HOME/bin:$PATH" make && \
 make install && \
 hash -r
 
-sudo cp ~/bin/* /usr/bin
+cp ~/bin/* /usr/bin
 rm -Rf ~/bin/
 rm -Rf ~/ffmpeg_build/
 rm -Rf ~/ffmpeg_sources/

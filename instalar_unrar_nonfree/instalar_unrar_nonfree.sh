@@ -1,13 +1,13 @@
 #!/bin/bash
 
-sudo apt-get remove unrar-free
+apt-get remove unrar-free
 
-sudo apt-get update
+apt-get update
 
 cd $(mktemp -d)
 
-sudo apt-get build-dep unrar-nonfree
+apt-get build-dep unrar-nonfree
 
-sudo apt-get source -b unrar-nonfree
+apt-get source -b unrar-nonfree
 
-sudo dpkg -i unrar*.deb
+dpkg -i unrar*.deb
